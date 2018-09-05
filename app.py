@@ -43,7 +43,7 @@ def shopping_list_post():
     if request.method == 'GET':
       return render_template('shopping_list.html')
     elif request.method == 'POST':
-          print(request.form(sort['text'].split()))
+          print(request.form['text'].split())
           
           shop_list = []
           try:
@@ -53,7 +53,7 @@ def shopping_list_post():
 
               
               
-            return render_template('shopping_list.html', result="\n".join([str(item) for item in shop_list]))
+            return render_template('shopping_list.html', result="\n".join(sort([str(item) for item in shop_list])))
           except ValueError:
             return "Easy now! Let's keep it simple! Just words with a space between them"
           
