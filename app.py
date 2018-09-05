@@ -43,7 +43,7 @@ def shopping_list_post():
     if request.method == 'GET':
       return render_template('shopping_list.html')
     elif request.method == 'POST':
-          print(request.form[sort('text')].split())
+          print(request.form(sort['text'].split()))
           
           shop_list = []
           try:
